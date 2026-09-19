@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">FlamePro Staff</string>
+    <string name="flamepro">FlamePro</string>
+    <string name="fire_safety_solutions">FIRE SAFETY SOLUTIONS</string>
+    <string name="staff_login">Staff Login</string>
+    <string name="access_account_continue">Access your staff account to continue</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="login_arrow">Login →</string>
+    <string name="or">OR</string>
+    <string name="create_account_arrow">Create Account →</string>
+    <string name="register_for_staff_access">Register for staff access</string>
+    <string name="register_arrow">Register →</string>
+    <string name="complete_profile_get_started">Complete your profile and get started</string>
+    <string name="safer_people_places_tomorrow">Safer People  •  Safer Places  •  A Safer Tomorrow</string>
+    <string name="register">Register</string>
+    <string name="register_subtitle">Join our team and be part of a safer tomorrow.</string>
+    <string name="full_name">Full Name</string>
+    <string name="username">Username</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="select_role">Select Role</string>
+    <string name="agree_terms_privacy">I agree to the Terms and Conditions and Privacy Policy.</string>
+    <string name="create_account_btn">Create Account →</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="back_to_login">Back to Login</string>
+</resources>
