@@ -305,11 +305,15 @@
 
                 <!-- Month Filter -->
                 <LinearLayout
+                    android:id="@+id/llMonthFilter"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_card_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingStart="10dp"
@@ -337,9 +341,10 @@
                             tools:ignore="SmallSp" />
 
                         <TextView
+                            android:id="@+id/tvMonthValue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="August 2025"
+                            android:text="August"
                             android:textColor="#111111"
                             android:textSize="12sp"
                             android:textStyle="bold" />
@@ -354,11 +359,15 @@
 
                 <!-- Year Filter -->
                 <LinearLayout
+                    android:id="@+id/llYearFilter"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_card_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingStart="10dp"
@@ -386,6 +395,7 @@
                             tools:ignore="SmallSp" />
 
                         <TextView
+                            android:id="@+id/tvYearValue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2025"
