@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Red Cylinder Tank -->
+    <path
+        android:fillColor="#D32F2F"
+        android:pathData="M8,9h8v11c0,1.1 -0.9,2 -2,2h-4c-1.1,0 -2,-0.9 -2,-2V9z" />
+    <!-- Black Top Nozzle & Handle -->
+    <path
+        android:fillColor="#212121"
+        android:pathData="M11,3h2v3h-2zM9,5h6v1.5H9zM7,7.5h10V9H7zM15,2h2v2h-2z" />
+    <!-- Yellow Pressure Gauge / Valve -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M11.5,4.5h1v1.5h-1z" />
+    <!-- Black Base Stand -->
+    <path
+        android:fillColor="#212121"
+        android:pathData="M9,21h6v1H9z" />
+</vector>

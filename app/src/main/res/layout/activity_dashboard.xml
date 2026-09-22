@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F6F8">
+
+    <!-- Red Header Section (Fixed at top) -->
+    <FrameLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fire_bg" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#CCB71C1C" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/headerContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="20dp"
+            android:paddingTop="36dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="16dp">
+
+            <!-- Subtitle with Flame Icon -->
+            <LinearLayout
+                android:id="@+id/llSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_flame" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Fire Safety"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <!-- Large Title: Dashboard -->
+            <TextView
+                android:id="@+id/tvDashboardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Dashboard"
+                android:textColor="#FFFFFF"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llSubtitle" />
+
+            <!-- Profile Avatar Circle Button -->
+            <FrameLayout
+                android:id="@+id/flProfile"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/bg_circle_white"
+                app:layout_constraintBottom_toBottomOf="@id/tvDashboardTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/llSubtitle">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_person"
+                    app:tint="#D32F2F" />
+            </FrameLayout>
+
+            <!-- Notification Bell with Red Badge -->
+            <FrameLayout
+                android:id="@+id/flNotifications"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintBottom_toBottomOf="@id/flProfile"
+                app:layout_constraintEnd_toStartOf="@id/flProfile"
+                app:layout_constraintTop_toTopOf="@id/flProfile">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_notifications" />
+
+                <!-- Red Badge 3 -->
+                <TextView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:background="@drawable/bg_badge_red"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    tools:ignore="SmallSp" />
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <!-- Bottom Navigation Bar (Fixed at bottom) -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Tab 1: Dashboard -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_home"
+                app:tint="#D32F2F" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Dashboard"
+                android:textColor="#D32F2F"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="2dp"
+                android:background="#D32F2F" />
+        </LinearLayout>
+
+        <!-- Tab 2: Stock -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_inventory" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Stock"
+                android:textColor="#757575"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Tab 3: Orders -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_assignment" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Orders"
+                android:textColor="#757575"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Tab 4: Reports -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_bar_chart"
+                app:tint="#757575" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Reports"
+                android:textColor="#757575"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Tab 5: Settings -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_settings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Settings"
+                    android:textColor="#757575"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_badge_red" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- Scrollable Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Filter Row: Month, Year, Sliders -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal">
+
+                <!-- Month Filter -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card_white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_calendar" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Month"
+                            android:textColor="#777777"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="August 2025"
+                            android:textColor="#111111"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_arrow_drop_down" />
+                </LinearLayout>
+
+                <!-- Year Filter -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card_white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_calendar" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Year"
+                            android:textColor="#777777"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2025"
+                            android:textColor="#111111"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_arrow_drop_down" />
+                </LinearLayout>
+
+                <!-- Filter / Sliders Button -->
+                <FrameLayout
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:background="@drawable/bg_card_pink">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_tune" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- Order Overview Card Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Order Overview Red Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#D32F2F"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_bar_chart" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Order Overview"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Orders and Status"
+                                android:textColor="#FFCDD2"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Order Overview Card Body -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <!-- Donut Chart -->
+                        <com.example.flameprostaff.DonutChartView
+                            android:layout_width="140dp"
+                            android:layout_height="140dp" />
+
+                        <!-- Legend Items -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="16dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <!-- Legend 1: All Orders -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:background="@drawable/bg_circle_red" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_weight="1"
+                                    android:text="All Orders"
+                                    android:textColor="#333333"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="4"
+                                    android:textColor="#111111"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginVertical="6dp"
+                                android:background="#F0F0F0" />
+
+                            <!-- Legend 2: Processing -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:background="@drawable/bg_circle_orange" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_weight="1"
+                                    android:text="Processing"
+                                    android:textColor="#333333"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1"
+                                    android:textColor="#111111"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginVertical="6dp"
+                                android:background="#F0F0F0" />
+
+                            <!-- Legend 3: Shipped -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:background="@drawable/bg_circle_yellow" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_weight="1"
+                                    android:text="Shipped"
+                                    android:textColor="#333333"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1"
+                                    android:textColor="#111111"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginVertical="6dp"
+                                android:background="#F0F0F0" />
+
+                            <!-- Legend 4: Late/Risk -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:background="@drawable/bg_circle_grey" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_weight="1"
+                                    android:text="Late/Risk"
+                                    android:textColor="#333333"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2"
+                                    android:textColor="#111111"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Quick Stat Cards Row (4 Stat Cards) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="16dp">
+
+                        <!-- Stat 1: All Orders -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_card_stat"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <FrameLayout
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:background="@drawable/bg_circle_red">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="!"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="All Orders"
+                                android:textColor="#555555"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:textColor="#111111"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Stat 2: Processing -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_card_stat"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <FrameLayout
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:background="@drawable/bg_circle_orange">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_clock" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Processing"
+                                android:textColor="#555555"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textColor="#111111"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Stat 3: Shipped -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_card_stat"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <FrameLayout
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:background="@drawable/bg_circle_yellow">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_truck" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Shipped"
+                                android:textColor="#555555"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textColor="#111111"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Stat 4: Late/Risk -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_card_stat"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <FrameLayout
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:background="@drawable/bg_circle_grey">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_warning" />
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Late/Risk"
+                                android:textColor="#555555"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2"
+                                android:textColor="#111111"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Low Stock Alerts Card Section -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Low Stock Red Header -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#D32F2F"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/ivStockAlert"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_warning" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@id/ivStockAlert"
+                            android:text="Low Stock Alerts"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:text="View All →"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <!-- Low Stock Body Items -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <!-- Item 1: CO2 Extinguisher -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_card_white_stroke"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                            <FrameLayout
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_card_stat">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_extinguisher" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="CO₂ Extinguisher"
+                                    android:textColor="#111111"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="FP-CO2-10LB"
+                                    android:textColor="#777777"
+                                    android:textSize="11sp" />
+
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="6dp"
+                                    android:layout_marginTop="8dp"
+                                    android:max="100"
+                                    android:progress="70"
+                                    android:progressDrawable="@drawable/bg_progressbar_red" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_badge_pink"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="8dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="7"
+                                    android:textColor="#D32F2F"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="UNITS LEFT"
+                                    android:textColor="#D32F2F"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="SmallSp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- Item 2: Clean Agent -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_card_white_stroke"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                            <FrameLayout
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_card_stat">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_extinguisher" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Clean Agent"
+                                    android:textColor="#111111"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="FP-CLEAN-5LB"
+                                    android:textColor="#777777"
+                                    android:textSize="11sp" />
+
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="6dp"
+                                    android:layout_marginTop="8dp"
+                                    android:max="100"
+                                    android:progress="50"
+                                    android:progressDrawable="@drawable/bg_progressbar_red" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_badge_pink"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="8dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="5"
+                                    android:textColor="#D32F2F"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="UNITS LEFT"
+                                    android:textColor="#D32F2F"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="SmallSp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- Item 3: Vehicle Pack -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_card_white_stroke"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                            <FrameLayout
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_card_stat">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_extinguisher" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Vehicle Pack"
+                                    android:textColor="#111111"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="FP-VEH-2.5LB"
+                                    android:textColor="#777777"
+                                    android:textSize="11sp" />
+
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="6dp"
+                                    android:layout_marginTop="8dp"
+                                    android:max="100"
+                                    android:progress="30"
+                                    android:progressDrawable="@drawable/bg_progressbar_red" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_badge_pink"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="8dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="3"
+                                    android:textColor="#D32F2F"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="UNITS LEFT"
+                                    android:textColor="#D32F2F"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="SmallSp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

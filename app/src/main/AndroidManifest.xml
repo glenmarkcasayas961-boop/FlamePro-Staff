@@ -11,6 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlameProStaff">
         <activity
+            android:name=".DashboardActivity"/>
+        <activity
             android:name=".StaffRegisterActivity"/>
         <activity
             android:name=".StaffLoginActivity"/>

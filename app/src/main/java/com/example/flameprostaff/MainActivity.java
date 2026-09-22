@@ -32,6 +32,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupNavigation() {
+        View btnLogin = findViewById(R.id.btnLogin);
+        if (btnLogin != null) {
+            btnLogin.setOnClickListener(v -> {
+                startActivity(new Intent(MainActivity.this, DashboardActivity.class));
+            });
+        }
+
+        View btnCreateAccount = findViewById(R.id.btnCreateAccount);
+        if (btnCreateAccount != null) {
+            btnCreateAccount.setOnClickListener(v -> {
+                startActivity(new Intent(MainActivity.this, StaffRegisterActivity.class));
+            });
+        }
+
         View btnRegister = findViewById(R.id.btnRegister);
         if (btnRegister != null) {
             btnRegister.setOnClickListener(v -> {
