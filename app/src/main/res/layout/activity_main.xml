@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -99,7 +100,8 @@
             android:textSize="9sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SmallSp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -230,7 +232,8 @@
                     android:layout_marginHorizontal="10dp"
                     android:text="@string/or"
                     android:textColor="#BBBBBB"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
 
                 <View
                     android:layout_width="0dp"
@@ -262,7 +265,8 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/register_for_staff_access"
                 android:textColor="#AAAAAA"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
 
             <!-- Register Button -->
             <Button
@@ -286,7 +290,8 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/complete_profile_get_started"
                 android:textColor="#AAAAAA"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
